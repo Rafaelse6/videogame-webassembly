@@ -1,11 +1,16 @@
+using Microsoft.EntityFrameworkCore;
 using VideoGameWebAssembly.Client.Pages;
 using VideoGameWebAssembly.Components;
+using VideoGameWebAssembly.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
