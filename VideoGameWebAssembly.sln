@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameWebAssembly", "VideoGameWebAssembly\VideoGameWebAssembly\VideoGameWebAssembly.csproj", "{B44F2D9C-7D82-469E-9339-3C17BAFE83BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameWebAssembly.Client", "VideoGameWebAssembly\VideoGameWebAssembly.Client\VideoGameWebAssembly.Client.csproj", "{3F34D78B-6C9C-415C-9044-68A6B4986CFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B44F2D9C-7D82-469E-9339-3C17BAFE83BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44F2D9C-7D82-469E-9339-3C17BAFE83BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44F2D9C-7D82-469E-9339-3C17BAFE83BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44F2D9C-7D82-469E-9339-3C17BAFE83BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F34D78B-6C9C-415C-9044-68A6B4986CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F34D78B-6C9C-415C-9044-68A6B4986CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F34D78B-6C9C-415C-9044-68A6B4986CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F34D78B-6C9C-415C-9044-68A6B4986CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {253E9028-17B2-450F-B3C8-1AEBF9991EC9}
+	EndGlobalSection
+EndGlobal
