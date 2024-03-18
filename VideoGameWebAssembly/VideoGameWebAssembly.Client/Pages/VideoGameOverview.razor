@@ -1,8 +1,9 @@
 ﻿@page "/videogames"
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
 @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
 
-<h3>VideoGameOverview</h3>
+<h3>Video Games</h3>
 
 <PageTitle>Video Games</PageTitle>
 
@@ -31,24 +32,44 @@ else
                     <td>@videoGame.Title</td>
                     <td>@videoGame.Publisher</td>
                     <td>@videoGame.ReleaseYear</td>
-                    <td></td>
+                    <td><button class="btn btn-primary" @onclick="@(() => EditGame(videoGame.Id))">Edit</button></td>
+                    <td><button class="btn btn-danger" @onclick="@(() => DeleteGame(videoGame.Id))">Delete</button></td>
                 </tr>
             }
         </tbody>
     </table>
 }
 
+<button class="btn btn-primary" @onclick="AddGame">Add a new game</button>
+
 @code {
     List<VideoGame> videoGames = new List<VideoGame>();
 
     protected override async Task OnInitializedAsync()
     {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
+        await LoadGames();
+    }
 
+    void AddGame()
+    {
+        NavigationManager.NavigateTo("edit-game");
+    }
+
+    void EditGame(int id)
+    {
+        NavigationManager.NavigateTo($"edit-game/{id}");
+    }
+
+    async Task DeleteGame(int id)
+    {
+        await Http.DeleteAsync($"api/videogames/{id}");
+        await LoadGames();
+    }
+
+    async Task LoadGames()
+    {
         var result = await Http.GetFromJsonAsync<List<VideoGame>>("api/videogames");
         if (result is not null)
             videoGames = result;
     }
-
 }
